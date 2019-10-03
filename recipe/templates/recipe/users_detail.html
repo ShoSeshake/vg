@@ -1,0 +1,34 @@
+{% extends 'recipe/base.html' %}
+
+{% block content %}
+        <div class="content">
+            <h2 id="new_post">{{ user.username }}'s Page</h2>
+            <div class="user_menu">
+                <div class="user_recipe_btn" id="user_recipe_btn">RECIPES</div>　/　<div class="user_article_btn" id="user_article_btn">ARTICLES</div>
+            </div>
+            <div class="content_recipe" id="recipe_content">
+                {% for post in posts %}
+                    <div class="recipe_image show" id="{{post.id}}" value="{{ post.id }}">
+                        <h1 class="recipe_title">{{ post.title }}</h1>
+                        <img src="{{ post.image.url }}" class="image">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="recipe_render" id="recipe_render">
+            {% include 'recipe/user_recipe_partial.html' %} 
+        </div>
+            <div class="user_article" id="content">
+                {% for a in articles %}
+                <a href="{% url 'article_detail' pk=a.pk %}" class="article_link">
+                    <div class="articles_list">
+                    <div class="articles_list_title">{{ a.title }}</div> 
+                    <div class="articles_list_right">
+                        <div class="articles_list_date">{{ a.created_date }}</div>
+                        <div class="articles_list_author">{{ a.author }}</div>
+                    </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+{% endblock %}

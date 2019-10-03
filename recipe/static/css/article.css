@@ -1,0 +1,121 @@
+.article_detail {
+    top: 10vh;
+    left: 10vw;
+    height: 75vh;
+    width: 70vw;
+    padding: 30px;
+    border-radius: 10px;
+    overflow: scroll;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* detailページ */
+
+.article_detail_flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.article_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(1, 77, 1);
+}
+
+.article_author {
+    font-size: 15px;
+    height: 20px;
+    line-height: 20px;
+    font-weight: bold;
+    color: rgb(1, 77, 1);
+    margin-top: 20px;
+}
+
+.icons.article {
+    color: rgb(1, 77, 1);
+    margin: 0;
+    right: 0;
+    position: absolute;
+}
+
+a.article_links,
+a.article_links:hover,
+a.article_links:visited {
+    color: rgb(1, 77, 1);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* article form */
+
+.content.article_new {
+    top: 20vh;
+}
+
+.initialize h1,
+.initialize h2,
+.initialize h3,
+.initialize h4,
+.initialize h5,
+.initialize h6,
+.initialize p {
+    font-size: initial;
+}
+
+label[for="id_content"] {
+    display: none;
+    visibility: hidden;
+}
+
+label[for="id_title"] {
+    color: white;
+}
+
+button.save.btn.btn-default.article {
+    margin-top: 10px;
+}
+
+
+/* 一覧 */
+
+.articles_list {
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 70vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.articles_list:hover {
+    background-color: white;
+}
+
+.articles_list_title {
+    font-size: 30px;
+    color: rgb(1, 77, 1);
+}
+
+.articles_list_right {
+    margin-top: 15px;
+}
+
+.articles_list_date {
+    color: rgb(1, 77, 1);
+    font-size: 13px;
+}
+
+.articles_list_author {
+    color: rgb(1, 77, 1);
+    margin-top: 15px;
+    font-size: 18px;
+    text-align: right;
+}
+
+a.article_link {
+    text-decoration: none;
+}

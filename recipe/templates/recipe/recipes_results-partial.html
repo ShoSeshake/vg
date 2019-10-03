@@ -1,0 +1,13 @@
+{% if posts %}
+  {% for post in posts %}
+      <div class="recipe_list_image"  id="{{ post.id }}" value="{{ post.id }}">
+          <h5 class="recipe_title">{{ post.title }}</h5>
+          <div class="author_name_list">
+              {{ post.author}}
+          </div>
+          <img src="{{ post.image.url }}" class="image_list"　value="{{ post.id }}">
+      </div>
+  {% endfor %}
+{% else %}
+  <p class="no_post">No posts found.</p>
+{% endif %}

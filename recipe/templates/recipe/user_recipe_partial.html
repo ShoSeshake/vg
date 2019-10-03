@@ -1,0 +1,24 @@
+{% if post %}
+    <div class="user_recipe">
+      <div class="recipe_titles user">
+          <h4 class="recipe_title">{{ post.title }}</h4>
+            <div class="icons">
+          {% if current_user == post.author %}
+            <a href="{% url 'recipe_edit' pk=post.pk %}" class="user_function">
+            <i class="far fa-edit"></i>
+            </a>
+            <a href="{% url 'recipe_delete' post.pk %}" class="user_function"  onclick='return confirm("Would you like to delete it?");'>
+            <i class="far fa-trash-alt"></i>            
+            </a>
+          {% endif %}
+            </div>
+      </div>
+      <div class="recipe_text">
+        {{ post.text }}
+      </div>
+      <p class="recipe_detail_date">Category : {{ post.category }}　/　{{ post.created_date }}</p>
+          
+    <div>
+  </div>
+{% else %}
+{% endif %}

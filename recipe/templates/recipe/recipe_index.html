@@ -1,0 +1,35 @@
+{% extends 'recipe/base.html' %}
+
+{% block content %}
+    <div class="content">
+        <div class="news_index">
+        --- Latest News ---
+        {% if news %}
+            {% for n in news %}
+                <div class="news_text">{{  n.text }}</div>
+            {% endfor%}
+        {% endif %}
+        </div>
+        <h2 class="latest">Newest Recipe</h2>
+        <div class="recipe_image_index">
+            <h1 class="recipe_title">{{ post.title }}</h1>
+            <a href="{% url 'users_detail' pk=post.author.pk %}" class="user_function">
+            <div class="index_author">
+                {{ post.author}}
+            </div>
+            </a>
+        <img src="{{ post.image.url }}" class="image_index">
+        </div>
+    </div>
+    <div class="b_icons">
+        <div class="fa_icon fb" id="facebook" >
+            <i class="fab fa-facebook-square fa-2x" id="fb"></i>
+        </div>
+        <div class="fa_icon ig" id="instagram" >
+            <i class="fab fa-instagram fa-2x" id="ig"></i>
+        </div>
+        <div class="fa_icon twt" id="twitter" >
+            <i class="fab fa-twitter-square fa-2x" id="twt"></i>
+        </div>
+    </div>
+{% endblock %}

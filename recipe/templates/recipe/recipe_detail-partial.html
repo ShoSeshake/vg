@@ -1,0 +1,17 @@
+{% if post %}
+  <div class="recipe_detail_div" id="{{ post.id }}">
+      <img src="{{ post.image.url }}" class="recipe_detail_image">
+      <div class="recipe_titles">
+          <h4 class="recipe_title">{{ post.title }}</h4>
+          <div class="author_name_detail">
+              <a href="{% url 'users_detail' pk=post.author.pk %}" class="user_function">{{ post.author }}</a>
+          </div>
+      </div>
+      <div class="recipe_text">
+        {{ post.text }}
+      </div>
+      <p class="recipe_detail_date">{{ post.created_date}}</p>
+  </div>
+{% else %}
+    <p class="no_post">No posts found.</p>
+{% endif %}

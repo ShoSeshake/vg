@@ -1,0 +1,53 @@
+{% extends 'recipe/base.html' %}
+
+{% block content %}
+<div class="content">
+    <h2 id="new_post">Recipe</h2>
+    {% load widget_tweaks %}
+    <form method="post" id="post_form" class="post-form" enctype="multipart/form-data">
+    {% csrf_token %}
+        <div class="append_box" id="category">
+            <select name="category" required id="id_category" size="{{ category|length }}" >
+            {% for c in category %}
+            <option value="{{ c.id }}" class="option">{{ c.name }}</option>
+            {% endfor %}
+            </select>
+        </div>
+        {% render_field form.title autocomplete="off" %}
+        {{ form.text }}
+            <div class="under_form">
+                <div class="uploadButton">
+                    choose photo?
+                    {% render_field form.image class="uploadButton" %}
+                </div>
+                <div id="category_btn" class="category_btn">Categories</div>
+                <button type="submit" class="save btn btn-default">
+                <div class="save_btn">SAVE</div>
+                </button>
+            </div>            
+        </div>
+    </form>
+    </div>
+{% endblock %}
+
+        {% comment %} <div class="append_box" id="ingredient">
+            <select name="ingredients" required id="id_ingredients" size="{{ ingredients|length }}" multiple>
+            {% for ingredient in ingredients %}
+            <option value="{{ ingredient.id }}" class="option">{{ ingredient.name }}</option>
+            {% endfor %}
+            </select>
+        </div>
+        <div class="post_form">
+                <div>
+                    <p><label for="id_title">Title:</label></p>
+                    <input type="text" name="title" maxlength="200" required id="id_title" autocomplete="off">
+                    <p><label for="id_text">Text:</label></p>
+                    <textarea name="text" required id="id_text"></textarea>
+                </div>
+                <div class="under_form">
+                    <div class="uploadButton">
+                        choose photo?
+                        <input type="file" name="image" accept="image/*" required id="id_image"/>
+                    </div>
+                    <div id="category_btn" class="category_btn">Categories</div>
+                    <div id="ingredient_btn" class="ingredient_btn">Ingredients</div> {% endcomment %}

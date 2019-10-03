@@ -1,0 +1,134 @@
+.contents {
+    left: 40px;
+    top: 150px;
+    position: absolute;
+    z-index: 1;
+}
+
+h3.signup__title,
+h3.login__title {
+    font-size: 30px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+h3.signup__title {
+    cursor: pointer;
+}
+
+.login_form {
+    left: 100px;
+    top: 150px;
+    z-index: 60;
+    position: fixed;
+    transform: translateY(100vh);
+    transition: all 1s;
+    visibility: hidden;
+    display: flex;
+}
+
+.login_form.is-show {
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.form_block {
+    margin-bottom: 20px;
+}
+
+input,
+input:focus,
+input:active,
+input:hover,
+input:after,
+input:before {
+    height: 40px;
+    width: 300px;
+    font-size: 30px;
+    line-height: 40px;
+    background-color: transparent !important;
+    color: white !important;
+    border: none;
+    border-bottom: 1px solid white;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+}
+
+button.create,
+button.login {
+    margin-left: 30px;
+    height: 30px;
+    font-size: 20px;
+    color: white;
+    line-height: 30px;
+    border: solid 1px white;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+p.info {
+    font-size: 14px;
+    color: white;
+}
+
+label,
+span .helptext {
+    font-size: 14px;
+    color: white;
+}
+
+.username_info {
+    margin: 100px 0 80px 30px;
+    opacity: 0.7;
+    visibility: hidden;
+    transform: translateY(100vh);
+    transition: all 1s;
+}
+
+.password_info {
+    margin-left: 30px;
+    opacity: 0.7;
+    visibility: hidden;
+    transform: translateY(100vh);
+    transition: all 1s;
+}
+
+.username_info.is-show,
+.password_info.is-show {
+    visibility: visible;
+    transform: translateY(0px);
+}
+
+a.back,
+a.back:hover,
+a.back:focus,
+a.back:visited {
+    color: white;
+    text-decoration: none;
+}
+
+p.back {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 70;
+}
+
+input:-webkit-autofill {
+    color: white !important;
+}
+
+@keyframes onAutoFillStart {
+    from {}
+    to {}
+}
+
+input:-webkit-autofill {
+    animation-name: onAutoFillStart;
+    transition: background-color 50000s ease-in-out 0s;
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+}

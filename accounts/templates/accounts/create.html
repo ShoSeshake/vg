@@ -1,0 +1,39 @@
+
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+<div class="login_form" id="login_form">
+    <div class="signup">
+        <h3 class="signup__title" id="signup_title">SIGN UP</h3>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="form_block">
+            <p><label for="id_username">Username</label></p>
+            <input type="text" name="username" maxlength="150" autofocus required id="id_username" autocomplete="off">
+            <p><label for="id_password1">Password</label></p>
+            <input type="password" name="password1" required id="id_password1">
+            <p><label for="id_password2">Password (Confirmation)</label><p/>
+            <input type="password" name="password2" required id="id_password2">
+            </div>
+            <button class="create" type="submit" id="form_btn">CREATE YOUR ACCOUNT</button>
+        </form>
+    </div>
+    <div>
+        <div class="username_info" id="username_info">
+        <p class="info">
+        Username must be alphabet, number, or  @/./+/-/_ <br>
+        Username can not be more than 150 characters.
+        </p>
+        </div>
+        <div class="password_info" id="password_info">
+        <p class="info">
+        Password must not include or similar to your personal information.<br>
+        Password must be more than 8 characters.<br>
+        Password must include alphabet.<br>
+        Predictable password will not be allowed.
+        </p>
+        </div>
+    </div>
+</div>
+    <a href="javascript:history.back()" class="back"><p class="back">BACK</p></a>
+{% endblock %}

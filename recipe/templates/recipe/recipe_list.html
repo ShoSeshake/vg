@@ -1,0 +1,29 @@
+{% extends 'recipe/base.html' %}
+{% block content %}
+<div class="list_all" id="list_all">
+    <div class="category_list">
+            <h3 class="category_title">CATEGORY</h3>
+        <div class="category_list_menu">
+            <select name="category" id="id_category" size="{{ category|length }}" class="category_name" >
+                {% for c in category %}
+                    <option value="{{ c.id }}" class="option" id="option-{{ c.id }}">{{ c.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+
+    <div class="recipe_list">
+        <h3 class="recipe_list_title">RECIPE LIST</h3>
+        <div class="recipe_list_block" id="recipe_block">
+            {% include 'recipe/recipes_results-partial.html' %}            
+        </div>
+    </div>
+    <div class="recipe_detail">
+        <h3 class="recipe_detail_title"><div class="recipe_detail_top">RECIPE</div></h3>
+        <div class="recipe_detail_block" id="detail_block">
+            {% include 'recipe/recipe_detail-partial.html' %}
+        </div>
+    </div>
+    <a href="javascript:history.back()" class="back"><p class="back">BACK</p></a>
+</div>
+{% endblock %}

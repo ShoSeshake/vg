@@ -1,0 +1,19 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+<div class="login_form" id="login_form">
+    <form action="" method="POST" id="login"  autocomplete="off">
+        {% csrf_token %}
+        <div class="form_block">
+        <h3 class="login__title">LOGIN</h3>
+        <p><label for="id_username">User</label></p>
+        <input type="text" name="username" autofocus placeholder="Username" required id="id_username" autocomplete="off">
+        <p><label for="id_password">Password</label></p>
+        <input type="password" name="password" placeholder="Password" required id="id_password">
+        </div>
+        <button class="login" type="submit" id="form_btn">LOGIN</button>
+    </form>
+    </div>
+        <a href="javascript:history.back()" class="back"><p class="back">BACK</p></a>
+{% endblock %}
+

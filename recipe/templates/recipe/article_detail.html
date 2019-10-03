@@ -1,0 +1,25 @@
+{% extends 'recipe/base.html' %}
+
+{% block content %}
+  <div class="article_detail">
+    <div class="article_detail_flex">
+    <div class="article_title">{{ article.title}}</div>
+    <div class="article_right_box">
+      {% if current_user == article.author %}    
+        <div class="icons article">
+          <a href="{% url 'article_edit' pk=article.pk %}" class="article_links">
+          <i class="far fa-edit"></i>
+          </a>
+          <a href="{% url 'article_delete' article.pk %}" class="article_links"  onclick='return confirm("Would you like to delete it?");'>
+          <i class="far fa-trash-alt"></i>            
+          </a>
+        </div>
+      {% endif %}
+      <div class="article_author">by {{ article.author }}</div>
+    </div>
+    </div>
+    <div class="initiliaze">
+    {{ article.content | safe }} 
+    </div>
+  </div>
+{% endblock %}

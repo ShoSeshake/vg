@@ -1,0 +1,17 @@
+{% extends 'recipe/base.html' %}
+
+{% block content %}
+  <div class="content">
+    {% for a in articles %}
+    <a href="{% url 'article_detail' pk=a.pk %}" class="article_link">
+      <div class="articles_list">
+        <div class="articles_list_title">{{ a.title }}</div> 
+        <div class="articles_list_right">
+          <div class="articles_list_date">{{ a.created_date }}</div>
+          <div class="articles_list_author">{{ a.author }}</div>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+{% endblock %}

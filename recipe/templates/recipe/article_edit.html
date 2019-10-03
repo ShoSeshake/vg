@@ -1,0 +1,17 @@
+{% extends 'recipe/base.html' %}
+
+{% block content %}
+<div class="content">
+    <h2 id="new_post">Article</h2>
+    {% load widget_tweaks %}
+    <form method="POST" action="">
+        {% csrf_token %}
+        {% render_field form.title autocomplete="off" %}
+        {{ form.media }}
+        {{ form.content }}<br>
+        <button type="submit" class="save btn btn-default article">
+        <div class="save_btn">SAVE</div>
+        </button>
+    </form>
+</div>
+{% endblock %}
