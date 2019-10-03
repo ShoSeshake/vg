@@ -6,7 +6,7 @@
         --- Latest News ---
         {% if news %}
             {% for n in news %}
-                <div class="news_text">{{  n.text }}</div>
+                <div class="news_text">{{  n.text|linebreaksbr }}</div>
             {% endfor%}
         {% endif %}
         </div>
